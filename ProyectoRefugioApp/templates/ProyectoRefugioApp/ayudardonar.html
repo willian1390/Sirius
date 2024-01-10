@@ -1,0 +1,85 @@
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Donaciones
+			</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						Alimento para mascotas
+					</h3>
+					<p>
+						Las donaciones como concentrado para perro son de mucha ayuda para la asociación, debido a que la demanda es alta por la cantidad de perros que albergamos, ellos necesitan de alimentación diaria para poder recuperarse y estar en buenas condiciones para su adopción. 
+
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img alt="alimento" style="width:250px;height:250px;" src="{% static 'ProyectoRefugioApp/images/alimento.jpg' %}">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						Abrigos, Mantas, Toallas...
+					</h3>
+					<p>
+						Otro tipo de ayuda hacia nuestros animales rescatados es con abrigos, mantas y toallas, estas prendas nos sirven para poder hacerles cogines o camas para que ellos puedan dormmir y descansar, también para las temporadas frias es de mucha utilidad para que ellos no sientan frío.
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img alt="abrigos" style="width:250px;height:250px;" src="{% static 'ProyectoRefugioApp/images/vet.jpg' %}">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						Tus donaciones en efectivo 
+					</h3>
+					<dl>
+						<dt>
+							
+						</dt>
+						<dd>
+							Las donaciones en efectivo son usadas para costear los tratamientos que necesitan nuestros animales rescatados, muchos de ellos necesitan ser vacunados, esterilizados, tener medicamentos incluso operaciones.
+						</dd>
+				
+						<dt>
+							Tus Donaciones nos ayudaran mucho 
+						</dt>
+						<dd>
+							Muchas vidas seran salvadas gracias a ti
+						<dt>
+							Haz tu deposito en la cuenta de Banrural
+						</dt>
+						<dd>
+							<strong>#4749 04 6334</strong>
+							<br>
+							O puedes dejarlo en Veterinaria Vets, Chiquimula
+							<br>
+							11a. AV 4-64 Zona 1, Chiquimula
+
+						</dd>
+					</dl>
+				</div>
+				<div class="col-md-6">
+					<img alt="efectivo" style="width:250px;height:250px;" src="{% static 'ProyectoRefugioApp/images/dona.jpg' %}">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+<br><br>
+
+
+{% endblock %}

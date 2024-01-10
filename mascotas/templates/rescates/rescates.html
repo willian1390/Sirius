@@ -1,0 +1,153 @@
+ 
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if mascotas %}
+	{% for mascota in mascotas %}
+ 
+
+ <style>
+.img-fluid{
+	max-width: 55%;
+	height: auto;
+}
+
+
+#lista2 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#lista2 ul {
+    margin: 0 0 0 2em; 
+}
+
+#lista2 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+#lista2 li:hover{
+    background: #eee;
+}
+
+#lista2 li:hover:before{
+    transform: rotate(360deg);  
+}
+
+#lista2 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+</style>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+			<div class="row">
+				<div class="col-md-7" align="center">
+		
+					<img class="img-fluid" alt="ImagenMascota" src="{{mascota.imagen.url}}" >				
+				</div>
+				<div class="col-md-5">
+					<h3 style="color: black;">{{mascota.nombre_mascota}}</h3>
+					<ul id="lista2">
+						<li class="list-item">
+							<p style="color: black;"><font size="4"><strong>Fecha de rescate: </strong></font>{{mascota.fecha_recate}}</p>
+						</li>
+						<li class="list-item">
+							<p style="color: black;"><font size="4"><strong>Lugar de rescate: </strong></font>{{mascota.lugar_rescate}}</p>
+						</li>
+						<li class="list-item">
+							<p style="color: black;"><font size="4"><strong>Nombre: </strong></font>{{mascota.nombre_mascota}}</p>
+						</li>
+						<li class="list-item">
+							<p style="color: black;"><font size="4"><strong>Edad Aproximada: </strong></font>{{mascota.edad_aprox}}</p>
+						</li>
+						<li class="list-item">
+							<p style="color: black;"><font size="4"><strong>Raza: </strong></font>{{mascota.raza}}</p>
+						</li>
+						<li class="list-item">
+							<p style="color: black;"><font size="4"><strong>Sexo: </strong></font>{{mascota.sexo}}</p>
+						</li>
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+</div>
+<br><br>
+
+{% endfor %}
+
+{% endif %}
+
+	<div class="row">
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 float-left">
+				{% if mascotas.has_previous %}
+
+					<div class="clearfix">
+						<a href="?page={{ mascotas.previous_page_number }}" class="btn btn-primary float-left">Anterior</a>
+					</div>
+
+				{% endif %}
+
+			</div>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 float-right">
+				{% if mascotas.has_next %}
+
+					<div class="clearfix">
+						<a href="?page={{ mascotas.next_page_number }}" class="btn btn-primary float-left">Siguiente</a>
+					</div>
+
+				{% endif %}
+
+			</div>
+			
+		</div>
+	</div>
+
+<br><br>
+{% endblock %}
+

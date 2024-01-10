@@ -1,0 +1,125 @@
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+	
+
+#lista5 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#lista5 ol {
+    margin: 0 0 0 2em; 
+}
+
+#lista5 {
+    list-style-type: none;
+    list-style-type: decimal !ie; /*IE 7- hack*/
+     
+    margin: 0;
+    margin-left: 1em;
+    padding: 0;
+     
+    counter-reset: li-counter;
+}
+
+#lista5 > li{
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    background-color: #eaeaea;
+}
+
+#lista5 > li:before {
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    width: 1.8em;
+    height: 1.2em;
+     
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    color: #464646;
+    background-color: #d0d0d0;
+     
+    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    z-index: 99;
+    overflow: hidden;
+     
+    content: counter(li-counter);
+    counter-increment: li-counter;
+
+}
+
+	
+</style>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Apadrina
+			</h3>
+			<br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						¿Qué es apadrinar?
+					</h3>
+					<p>
+						 El apadrinamiento se ha convertido en una vía a través de la cual las personas pueden colaborar con la manutención de un perro de un albergue. En algunos casos, también se da la opción de pasear a los perros, hacer actividades con ellos e, incluso, cuidarlos unos días en casa. 
+						 <br>
+						 El apadrinar a un animal es un opción a para aquellas personas que no pueden tener una mascota por diferentes razones, cuando apadrinas aportas una cantidad mensual de dinero para poder cubrir los gastos medicos, de alimentacion, etc. 
+						 Otra forma de apadrinar es donando alimentos. Esto reduce el costo que debe pagarse. Dependiendo del tamaño del animal, el animal puede comer de 4 a 10 kg por mes. A veces, esta cantidad es mayor.
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img alt="apadrina" style="width:450px;height:250px;" src="{% static 'ProyectoRefugioApp/images/apadrina.jpg' %}">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-5">
+					<h3>
+						Apadrina Ahora!
+					</h3>
+					<p>	Para apadrinar debes:</p>
+						
+						<ol id="lista5">
+							<li>Ponerte en contacto con nosotros</li>
+							<li>Proporcionar tus datos: nombre direccion telefono...</li>
+							<li>Acordar tu forma de pago para la manutención del perro que quieras apadrinar</li>
+							<li>Y si deseas, puedes apadrinar a mas de un animal!!</li>
+						</ol>
+					
+					<a href="ayudarapadrinarformulario" class="btn btn-info btn-default btn-lg active" role="button" >APADRINAR!!</a>
+
+				</div>
+				<div class="col-md-7">
+					<img alt="apadrina2" style="width:270px;height:320px;" src="{% static 'ProyectoRefugioApp/images/apadrina2.jpg' %}" >
+					<br><br>
+					<img alt="apadrina3" style="width:270px;height:270px;" src="{% static 'ProyectoRefugioApp/images/apadrina1.jpg' %}"> 
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<br><br>
+{% endblock %}

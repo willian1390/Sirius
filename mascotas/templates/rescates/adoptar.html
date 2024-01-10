@@ -1,0 +1,99 @@
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+			<div class="page-header" align="center">
+				<h1 align="center">
+					Adopta una mascota
+				</h1>
+				<img alt="Bootstrap Image Preview" style="width:250px;height:250px;" src="{% static 'ProyectoRefugioApp/images/adopcion.jpg' %}" />
+			</div>
+			<br><br><br>
+
+{% if adoptar %}			
+	{% for adopta in adoptar %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="row">
+				<div class="col-md-4">
+					<h3 style="color: black;">{{adopta.mascota.nombre_mascota}}</h3>
+					<p style="color: black;"><font size="4"><strong>Descripcion: </strong></font><br>{{adopta.descripcion  | safe}}</p>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="img-fluid" alt="ImagenMascota" src="{{adopta.iadoptar.url}}" >			
+						</div>
+			<div class="col-md-6">
+							<ul>
+								<br><br><br>
+								<li class="list-item">
+									<p style="color: black;"><font size="3"><strong>Nombre: </strong></font>{{adopta.mascota.nombre_mascota}}</p>
+								</li>
+								<li class="list-item">
+									<p style="color: black;"><font size="3"><strong>Edad: </strong></font>{{adopta.mascota.edad_aprox}}</p>
+								</li>
+								<li class="list-item">
+									<p style="color: black;"><font size="3"><strong>Raza: </strong></font>{{adopta.mascota.raza}}</p>
+								</li>
+								<li class="list-item">
+									<p style="color: black;"><font size="3"><strong>Sexo: </strong></font>{{adopta.mascota.sexo}}</p>
+								</li>
+								<li class="list-item">
+									<p style="color: black;"><font size="3"><strong>Lugar de Rescate: </strong></font>{{adopta.mascota.lugar_rescate}}</p>
+								</li>
+								
+								
+							</ul>
+ 								<br>
+							<a href="adoptarformulario" class="btn btn-info btn-sm btn-lg active" role="button" >Adoptar</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+			<br><br>
+
+
+{% endfor %}
+
+{% endif %}
+	<div class="row">
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 float-left">
+				{% if adoptar.has_previous %}
+
+					<div class="clearfix">
+						<a href="?page={{ adoptar.previous_page_number }}" class="btn btn-primary float-left">Anterior</a>
+					</div>
+
+				{% endif %}
+
+			</div>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 float-right">
+				{% if adoptar.has_next %}
+
+					<div class="clearfix">
+						<a href="?page={{ adoptar.next_page_number }}" class="btn btn-primary float-left">Siguiente</a>
+					</div>
+
+				{% endif %}
+
+			</div>
+			
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,376 @@
+<div>
+
+		<h3 style="color: black;">{{mascota.nombre_mascota}}</h3>
+
+		<p style="color: black;">{{mascota.fecha_recate}}</p>
+		<p style="color: black;">Lugar de rescate</p>
+		<p style="color: black;">{{mascota.nombre_mascota}}</p>
+		<p style="color: black;">{{mascota.edad_aprox}}</p>
+		<p style="color: black;">Raza</p>
+		<p style="color: black;">{{mascota.sexo}}</p>
+		<p><img src="{{mascota.imagen.url}}"></p>
+
+</div>
+
+
+
+
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<style type="text/css">
+	
+
+#lista2 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#lista2 ul {
+    margin: 0 0 0 2em; 
+}
+
+#lista2 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+#lista2 li:hover{
+    background: #eee;
+}
+
+#lista2 li:hover:before{
+    transform: rotate(360deg);  
+}
+
+#lista2 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+
+
+ img {
+  width:100%;
+  height:auto;
+}
+
+}
+</style>
+
+
+<body>
+	
+<div class="container-fluid">
+
+	<div class="row">
+
+		<div class="col-md-1">
+
+		</div>
+
+		<div class="col-md-10">
+
+			<div class="row">
+
+				<div class="col-md-7">
+
+					<p><img src="{{mascota.imagen.url}}"></p>
+					<img alt="Bootstrap Image Preview" style="width:250px;height:350px;" src="images/rescate/1.1.jpg" />
+				</div>
+
+				<div class="col-md-5">
+
+					<h3 style="color: black;">{{mascota.nombre_mascota}}</h3>
+
+					<ul id="lista2">
+
+						<li class="list-item">
+
+							<p style="color: black;">{{mascota.fecha_recate}}</p>
+
+						</li>
+
+						<li class="list-item">
+
+							<p style="color: black;">Lugar de rescate</p>
+
+						</li>
+
+						<li class="list-item">
+
+							<p style="color: black;">{{mascota.nombre_mascota}}</p>
+
+						</li>
+
+						<li class="list-item">
+
+							<p style="color: black;">{{mascota.edad_aprox}}</p>
+
+						</li>
+
+						<li class="list-item">
+
+							<p style="color: black;">Raza</p>
+
+						</li>
+
+						<li class="list-item">
+
+							<p style="color: black;">{{mascota.sexo}}</p>
+
+						</li>
+
+						
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-1">
+
+		</div>
+
+	</div>
+
+</div>
+<br><br>
+
+
+
+
+
+	
+<div class="container-fluid">
+
+	<div class="row">
+
+		<div class="col-md-1">
+
+		</div>
+
+		<div class="col-md-10">
+
+			<div class="row">
+
+				<div class="col-md-7">
+
+					<img alt="Bootstrap Image Preview" style="width:250px;height:250px;" src="images/rescate/2.jpg" />
+					<img alt="Bootstrap Image Preview" style="width:250px;height:250px;" src="images/rescate/2.1.jpg" />
+
+				</div>
+
+				<div class="col-md-5">
+
+					<h3>
+
+						Terry
+
+					</h3>
+
+					<ul id="lista2">
+
+						<li class="list-item">
+
+							Fecha de Rescate: 10/05/2020
+
+						</li>
+
+						<li class="list-item">
+
+							Lugar de rescate: Shusho
+
+						</li>
+
+						<li class="list-item">
+
+							Nombre: Terry
+
+						</li>
+
+						<li class="list-item">
+
+							Edad aproximada: 3 años
+
+						</li>
+
+						<li class="list-item">
+
+							Raza:
+
+						</li>
+
+						<li class="list-item">
+
+							Sexo: Macho
+
+						</li>
+
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-1">
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<br><br>
+	
+<div class="container-fluid">
+
+	<div class="row">
+
+		<div class="col-md-1">
+
+		</div>
+
+		<div class="col-md-10">
+
+			<div class="row">
+
+				<div class="col-md-7">
+
+					<img alt="Bootstrap Image Preview" style="width:250px;height:350px;" src="images/rescate/3.jpg" />
+					<img alt="Bootstrap Image Preview" style="width:250px;height:350px;" src="images/rescate/3.1.jpg" />
+
+				</div>
+
+				<div class="col-md-5">
+
+					<h3>
+
+						Negrita.
+
+					</h3>
+
+					<ul id="lista2">
+
+						<li class="list-item">
+
+							Fecha de Rescate: 18/06/2020
+
+						</li>
+
+						<li class="list-item">
+
+							Lugar de rescate: Calvario
+
+						</li>
+
+						<li class="list-item">
+
+							Nombre: Negrita
+
+						</li>
+
+						<li class="list-item">
+
+							Edad aproximada: 2 años
+
+						</li>
+
+						<li class="list-item">
+
+							Raza:
+
+						</li>
+
+						<li class="list-item">
+
+							Sexo: Hembra
+
+						</li>
+
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-1">
+
+		</div>
+
+	</div>
+
+</div>
+</body>
+
+
+	<br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<nav>
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#">Previous</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">1</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">2</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">3</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">4</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">5</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">Next</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

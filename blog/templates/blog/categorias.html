@@ -1,0 +1,97 @@
+
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% for post in posts %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-4">
+							<img class="img-fluid" alt="ImagenPost" src="{{post.imagen.url}}" >
+						</div>
+						<div class="col-md-8">
+							<h3>
+								<h3 style="color: black;">{{post.titulo}}</h3>
+							</h3>
+							<p>{{post.contenido}}</p> 
+							<br><br>
+
+							<div style="text-align: left; font-size: 0.8em">
+								Autor: {{post.autor}}
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br><br>
+			
+{% endfor %}
+
+
+	<section>
+		
+		<div style="width:75%; margin: auto; text-align: center; color: black">
+			
+			Categorias: 
+				{% for post in posts %}
+
+					{% for categoria in post.categorias.all %} 
+
+						{{categoria.nombre}}
+
+					{% endfor %}
+
+				{% endfor %}	
+		</div>
+
+	</section>
+
+	<br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<nav>
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#">Previous</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">1</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">2</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">3</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">4</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">5</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">Next</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+
+
+<br><br>
+{% endblock %}

@@ -1,0 +1,140 @@
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+	
+
+#lista5 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#lista5 ol {
+    margin: 0 0 0 2em; 
+}
+
+#lista5 {
+    list-style-type: none;
+    list-style-type: decimal !ie; /*IE 7- hack*/
+     
+    margin: 0;
+    margin-left: 1em;
+    padding: 0;
+     
+    counter-reset: li-counter;
+}
+
+#lista5 > li{
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    background-color: #eaeaea;
+}
+
+#lista5 > li:before {
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    width: 1.8em;
+    height: 1.2em;
+     
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    color: #464646;
+    background-color: #d0d0d0;
+     
+    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    z-index: 99;
+    overflow: hidden;
+     
+    content: counter(li-counter);
+    counter-increment: li-counter;
+
+}
+
+	
+</style>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12" align="center">
+			<h3 class="text-center">
+				Únete a nosotros
+			</h3>
+			<img  alt="Bootstrap Image Preview" style="width:450px;height:250px; border: 1px solid; color: black"  src="{% static 'ProyectoRefugioApp/images/voluntario.jpg' %} " >			<br><br><br>
+		</div>
+			<br><br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						Se Voluntario
+					</h3>
+
+					<p>
+						Los voluntarios nos dan parte de su tiempo para realizar labores solidarias para nuestros animales, sin esperar algun tipo de contraprestacion económica, se llevan la satisfaccion de haber podido ayudar, mejorar el hogar y situación de estos animales que han sido abandonados.
+						<br><br>
+
+						Puedes contactarnos mediante Facebook, Whatsapp ó por correo electronico.
+
+					</p>
+
+							 <img alt="whatsapp" style="width:40px;height:40px;" src="{% static 'ProyectoRefugioApp/images/gm.png' %}">
+
+							<img alt="whatsapp" style="width:37px;height:37px;" src="{% static 'ProyectoRefugioApp/images/wt.png' %}">
+
+							<img alt="whatsapp" style="width:35px;height:35px;" src="{% static 'ProyectoRefugioApp/images/fb.png' %}">
+
+				</div>
+				<div class="col-md-6">
+					<img alt="voluntario1" style="width:450px;height:250px;" src="{% static 'ProyectoRefugioApp/images/voluntario1.jpg' %} "><br><br>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						Ayuda a nuestros amigos!
+					</h3>
+					<p>
+						Cuando llegas al lugar donde acogemos a los animales puedes ayudar de las siguientes maneras:
+
+					</p>
+
+					<ul id="lista5">
+						<li>Llevando tus donaciones de alimento</li>
+						<li>Cuidado general de los animales</li>
+						<li>Ayudando a buscar familias que quieran adoptar</li>
+						<li> Tambien puedes dar hogar temporal en tu propia casa!</li>
+						<li>Puedes sacar a pasear a una o varias mascotas</li>
+						<li>Difundiendo mediante redes sociales</li>
+						<li>Ayudando al mantenimiento del lugar</li>
+						<li>Recolectando materiales que sean de utilidad para los animales</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<img alt="voluntario2" style="width:330px;height:250px;" src="{% static 'ProyectoRefugioApp/images/voluntario2.jpg' %}">
+					<img alt="voluntario3" style="width:270px;height:240px;" src="{% static 'ProyectoRefugioApp/images/voluntario3.jpg' %}">
+					<br><br><br>
+					<img alt="voluntario5" style="width:310px;height:260px;" src="{% static 'ProyectoRefugioApp/images/voluntario4.jpg' %}">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<br><br>
+{% endblock %}

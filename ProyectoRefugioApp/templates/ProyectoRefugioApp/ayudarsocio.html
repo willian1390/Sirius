@@ -1,0 +1,137 @@
+{% extends "ProyectoRefugioApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+	
+
+#lista5 {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#lista5 ol {
+    margin: 0 0 0 2em; 
+}
+
+#lista5 {
+    list-style-type: none;
+    list-style-type: decimal !ie; /*IE 7- hack*/
+     
+    margin: 0;
+    margin-left: 1em;
+    padding: 0;
+     
+    counter-reset: li-counter;
+}
+
+#lista5 > li{
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    background-color: #eaeaea;
+}
+
+#lista5 > li:before {
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    width: 1.8em;
+    height: 1.2em;
+     
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    color: #464646;
+    background-color: #d0d0d0;
+     
+    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    z-index: 99;
+    overflow: hidden;
+     
+    content: counter(li-counter);
+    counter-increment: li-counter;
+
+}
+
+	
+</style>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Se Socio de SIRIUS
+			</h3>
+			<br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						¿Qué es un Socio?
+					</h3>
+					<p>
+						<br>
+				Para nosotros un socio representa a una persona que forma parte <br>
+				de nuestra asociación, su finalidad es de tipo social, esta entidad <br>
+				contribuye de manera financiera donando periodicamente una <br>
+				cantidad de dinero para los gastos que conlleva el cuidado de todos<br> 
+				los animales que hemos rescatado. 
+
+				Ser socio significa que posees empatía<br> con los animales, y estar dispuesto
+				a colaborar para que ellos puedan <br>tener una mejor vida. 
+
+
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img alt="socio" style="width:250px;height:380px;" src="{% static 'ProyectoRefugioApp/images/socio.jpg' %}">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>
+						¿Cómo puedes ser Socio?
+					</h3>
+					<p>
+						<ul id="lista5">
+							<li>Demostrando que eres una persona considerada y comprometida con los animales</li>
+							<li></li>
+							<li></li>
+							<li>Estar dispuesto a contribuir periodicamente</li>
+						</ul>
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img alt="socio1" style="width:300px;height:310px;" src="{% static 'ProyectoRefugioApp/images/socio1.jpg' %}">
+					<img alt="socio2" style="width:270px;height:240px;" src="{% static 'ProyectoRefugioApp/images/socio2.jpg' %}">
+				</div>
+			</div>
+				<br><br>
+			<div class="row">
+				<div class="col-md-12" align="center">
+					<img alt="socio3" style="width:310px;height:250px;" src="{% static 'ProyectoRefugioApp/images/socio3.jpg' %}">
+					<img alt="socio4" style="width:250px;height:380px;" src="{% static 'ProyectoRefugioApp/images/socio4.jpg' %}">
+					<p>
+						Con tu contribución podemos mantener muchas vidas!	
+					<p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<br><br>
+{% endblock %}
